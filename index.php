@@ -1,33 +1,41 @@
 <?php 
+
+// Include config file
+$CONFIG = (require_once('config.php'));
+
 // Load required functions
-include 'function.php';
+include 'ServerInfo.php';
+$objSI = new ServerInfo($CONFIG);
 
 // Get project list
-$projects = getProjectList();
+$projects = $objSI->getProjectList();
 
 // PHP loaded
 $phploadedext = get_loaded_extensions(); 
-$phploadedext_html = formatExtension($phploadedext);
+$phploadedext_html = $objSI->formatExtension($phploadedext);
 
 
 // Apache modules
 $apache_modules = apache_get_modules();
-$apache_modules_html = formatExtension($apache_modules);
+$apache_modules_html = $objSI->formatExtension($apache_modules);
 $server_address = apache_getenv("SERVER_ADDR");
 
-$server_info = serverConfiguration();
-$loaded_file = serverLoadedFiles();
+$server_info = $objSI->serverConfiguration();
+$loaded_file = $objSI->serverLoadedFiles();
 
 // Apache paths
-$apache_files = apacheConfFiles();
-$apache_vhosts = virtualHostFile();
+$apache_files = $objSI->apacheConfFiles();
+$apache_vhosts = $objSI->virtualHostFile();
 
 
 // Terminal command
-$terminal_command = terminalCommands();
+$terminal_command = $objSI->terminalCommands();
 
 // Host file content
-$host_content = getHostFileContent();
+$host_content = $objSI->getHostFileContent();
+
+// Vurtual host file content
+$virtualhost_content = $objSI->getVhostFileContent();
 
 //Load view page
 include 'view.php';

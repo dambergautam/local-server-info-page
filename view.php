@@ -171,10 +171,14 @@
                 <button class="w3-bar-item w3-button testbtn w3-padding-16" onclick="openCity(event,'Tokyo')">Apache Loaded Modules</button>
             </div>
             <div id="London" class="w3-container city w3-animate-opacity" style="display: block;">
-                <h2>Virtual Host</h2>
+                <h2>Host File</h2>
                 <pre>
                     <?php echo $host_content;?>
                 </pre>
+                <br />
+
+                <h2>Virtual Host File</h2>
+                <pre><?php echo $virtualhost_content;?></pre>
             </div>
             <div id="Paris" class="w3-container city w3-animate-opacity" style="display: none;">
                 <h2>Enabled Extensions</h2>
