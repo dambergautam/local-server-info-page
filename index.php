@@ -1,7 +1,11 @@
 <?php 
 
+if (!file_exists('./config/config.php')) {
+	header('location:setup.php');
+}
+
 // Include config file
-$CONFIG = (require_once('config.php'));
+$CONFIG = (require_once('./config/config.php'));
 
 // Load required functions
 include 'ServerInfo.php';
