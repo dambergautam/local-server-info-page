@@ -1,4 +1,6 @@
 /vendor
 .DS_Store
 .editorConfig
-./config/config.php
+
+# Ignore config
+config/config.php
