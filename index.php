@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 if (!file_exists('./config/config.php')) {
 	header('location:setup.php');
@@ -15,7 +15,7 @@ $objSI = new ServerInfo($CONFIG);
 $projects = $objSI->getProjectList();
 
 // PHP loaded
-$phploadedext = get_loaded_extensions(); 
+$phploadedext = get_loaded_extensions();
 $phploadedext_html = $objSI->formatExtension($phploadedext);
 
 
@@ -40,6 +40,9 @@ $host_content = $objSI->getHostFileContent();
 
 // Vurtual host file content
 $virtualhost_content = $objSI->getVhostFileContent();
+
+// Appache config
+$apacheConfig_content = $objSI->getHttpdFileContent();
 
 //Load view page
 include 'view.php';

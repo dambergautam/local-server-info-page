@@ -4,10 +4,11 @@
 
 return array(
 	'VHOST' => '',				// Virtual host file name eg. /etc/httpd/conf.d/myvirtualhost.conf
+	'HTTPD' => '', 				// /usr/local/etc/httpd/httpd.conf',
 	'HOSTS' => '',				// Host file name eg. /etc/hosts
-	'PROJECT_DIR' => '',		// Directory where your all project lives
-	'DB' => array(		
-		'USER' => 'root',	
+	'PROJECT_DIR' => '',	// Directory where your all project lives
+	'DB' => array(
+		'USER' => 'root',
 		'PASSWORD' => '',
 		'HOST' => 'localhost',
 		),
